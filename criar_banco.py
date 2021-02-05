@@ -7,4 +7,5 @@ conexao = connect(  # função com parâmetros nomeados
     password='12345678'
 )
 
-# print(conexao)
+cursor = conexao.cursor()  # executa os comandos sql e armazena os resultados
+cursor.execute('CREATE DATABASE IF NOT EXISTS agenda')
