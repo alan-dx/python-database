@@ -11,13 +11,13 @@ parametros = dict(
 )
 
 
-# gerencia o contexto da aplicação para ser passado para o bloco with, indicando o que deve ser feito no with
-@contextmanager
+# gerencia o contexto da aplicação para ser passado para o bloco with, indicando o que ele deve fazer
+@contextmanager  # lembre que o decorator passa uma função para ser executada dentro do escopo de outra em um determinado moemento
 def nova_conexao():
     conexao = connect(**parametros)
     try:
         yield conexao
     finally:
         if (conexao and conexao.is_connected()):
-            conexao.close()  # libera o recurso
+            conexao.close()  # libera o recurso, encerrando a conexão
             print('finally...')
