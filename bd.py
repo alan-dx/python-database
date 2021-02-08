@@ -20,4 +20,4 @@ def nova_conexao():
     finally:
         if (conexao and conexao.is_connected()):
             conexao.close()  # libera o recurso, encerrando a conexão
-            print('finally...')
+            print('conexão com o banco de dados encerrada!')
