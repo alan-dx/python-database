@@ -1,4 +1,4 @@
-import xml.etree.ElementTree as ET
+import xml.etree.ElementTree as ET #usando para coleta de dados do arquivo library.xml
 import sqlite3
 
 conn = sqlite3.connect('trackdb.sqlite')
@@ -36,7 +36,9 @@ CREATE TABLE Track (
     len INTEGER, rating INTEGER, count INTEGER
 );
 ''')
-
+# nos comandos acima eu fiz um ID para todas ass tabelas isso pois eu não quero repetir dados
+# exemplo existem diversas musicas com o mesmo autor/genero/album mas se eu colocar ele diretamente a tabela ficará muito pessada ou lenta
+# a solução é criar tabelas separadas e depois associa-lás usando esses ID's
 
 fname = input('Enter file name: ')
 if ( len(fname) < 1 ) : fname = 'Library.xml'
